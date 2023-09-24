@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Register from './Register';
+import Balance from './Balance';
 import NavbarLoggedIn from './NavbarLoggedIn';
 import NavbarLoggedOut from './NavbarLoggedOut';
 import { getAuth, onAuthStateChanged } from './firebaseConfig';
@@ -13,7 +14,8 @@ function App() {
 
   useEffect(() => {
     const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, user => {
+      console.log('onAuthStateChanged', user.uid);
       if (user) {
         setUser(user);
       } else {
@@ -24,14 +26,22 @@ function App() {
 
   return (
     <div>
-    <Router>
-      {user ? <NavbarLoggedOut /> : <NavbarLoggedIn />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Login/" element={<Login />} />
-        <Route path="/Register/" element={<Register />} />
-      </Routes>
-    </Router>
+      <Router>
+        {user ? (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Login/" element={<Login />} />
+            <Route path="/Register/" element={<Register />} />
+            <Route path="/Balance/" element={<Balance uid={user.uid} />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Login/" element={<Login />} />
+            <Route path="/Register/" element={<Register />} />
+          </Routes>
+        )}
+      </Router>
     </div>
   );
 }
