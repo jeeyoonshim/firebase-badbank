@@ -1,4 +1,4 @@
-function NavbarLoggedIn() {
+function NavBarLoggedIn() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="/">
@@ -28,18 +28,18 @@ function NavbarLoggedIn() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/deposit/">
+            <a className="nav-link" href="/Balance/">
+              Balance
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/Deposit/">
               Deposit
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/withdraw/">
+            <a className="nav-link" href="/Withdraw/">
               Withdraw
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/Balance/">
-              Balance
             </a>
           </li>
           <li className="nav-item">
@@ -53,4 +53,4 @@ function NavbarLoggedIn() {
   );
 }
 
-export default NavbarLoggedIn;
+export default NavBarLoggedIn;

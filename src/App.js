@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useReducer } from 'react';
-
+import { getAuth, onAuthStateChanged } from './firebaseConfig';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Register from './Register';
 import Balance from './Balance';
-import { getAuth, onAuthStateChanged } from './firebaseConfig';
 import Login from './Login';
 import Home from './Home';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Deposit from './Deposit';
 import NavBarLoggedIn from './NavBarLoggedIn';
 import NavBarLoggedOut from './NavBarLoggedOut';
 
@@ -34,6 +34,7 @@ function App() {
               <Route path="/Login/" element={<Login />} />
               <Route path="/Register/" element={<Register />} />
               <Route path="/Balance/" element={<Balance uid={user.uid} />} />
+              <Route path="/Deposit/" element={<Deposit uid={user.uid} />} />
             </>
           ) : (
             <>
