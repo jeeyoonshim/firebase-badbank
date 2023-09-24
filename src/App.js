@@ -6,6 +6,7 @@ import Balance from './Balance';
 import Login from './Login';
 import Home from './Home';
 import Deposit from './Deposit';
+import Withdraw from './Withdraw';
 import NavBarLoggedIn from './NavBarLoggedIn';
 import NavBarLoggedOut from './NavBarLoggedOut';
 
@@ -35,6 +36,7 @@ function App() {
               <Route path="/Register/" element={<Register />} />
               <Route path="/Balance/" element={<Balance uid={user.uid} />} />
               <Route path="/Deposit/" element={<Deposit uid={user.uid} />} />
+              <Route path="/Withdraw/" element={<Withdraw uid={user.uid} />} />
             </>
           ) : (
             <>
