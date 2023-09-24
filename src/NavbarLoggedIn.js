@@ -1,6 +1,4 @@
-import Balance from './Balance';
-
-function NavbarLoggedIn({ uid }) {
+function NavbarLoggedIn() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="/">
@@ -39,7 +37,11 @@ function NavbarLoggedIn({ uid }) {
               Withdraw
             </a>
           </li>
-          <Balance uid={uid} />
+          <li className="nav-item">
+            <a className="nav-link" href="/Balance/">
+              Balance
+            </a>
+          </li>
           <li className="nav-item">
             <a className="nav-link" href="/alldata/">
               AllData

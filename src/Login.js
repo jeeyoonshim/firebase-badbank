@@ -14,8 +14,7 @@ function Login() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log('Logged in user:', user.email);
-      setUid(user.uid)
-      console.log(JSON.stringify(user));
+      setUid(user.uid);
       alert(`Logged in user: ${user.email}`);
     } catch (error) {
       console.error('Login failed:', error.message);
