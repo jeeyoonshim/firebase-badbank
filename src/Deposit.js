@@ -18,10 +18,10 @@ function Deposit({ uid }){
         // alert(`your status is: ${status}`)
         // const userDetails = await readUserData(uid);
         e.preventDefault();
-
+        const userDetails = await readUserData(uid);
         const newBalance = userDetails.balance + parseFloat(amount);
 
-        const userDetails = await readUserData(uid);
+       
         console.log(userDetails);
         await saveUserDataToDatabase(uid, {
             email: userDetails.email,

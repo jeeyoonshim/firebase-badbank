@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import { getAuth, auth, signInWithEmailAndPassword } from './firebaseConfig';
+import { auth, signInWithEmailAndPassword } from './firebaseConfig';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [uid, setUid] = useState('');
+  //const [uid, setUid] = useState('');
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -14,8 +14,8 @@ function Login() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log('Logged in user:', user.email);
-      setUid(user.uid);
-      alert(`Logged in user: ${user.email}`);
+      //setUid(user.uid);
+      alert(`Successfully logged in as user: ${user.email}`);
     } catch (error) {
       console.error('Login failed:', error.message);
       setEmail('');
